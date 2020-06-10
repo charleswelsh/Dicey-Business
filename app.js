@@ -37,8 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
             this.diceDiv = document.createElement("div");
             this.diceDiv.className = "diceDiv"
             document.body.appendChild(this.diceDiv);
+            this.diceDiv.addEventListener("click", this.roll.bind(this));
             diceArray.push(this);
         }
+
         roll(){
             this.value = Math.floor((Math.random() *6) + 1);
             this.diceDiv.innerText = this.value;
